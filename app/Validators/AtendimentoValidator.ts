@@ -6,16 +6,16 @@ export default class AtendimentoValidator {
 
   public schema = schema.create({
     valor: schema.number([
-      rules.required,
+      rules.required(),
     ]),
-    produto: schema.string({},[
-      rules.required,
+    produto: schema.string([
+      rules.required(),
       rules.alphaNum({
       allow: ['space', 'dash']
       }),
     ]),
-    tipoPagamento: schema.string({},[
-      rules.required,
+    tipo_pagamento: schema.string([
+      rules.required(),
       rules.maxLength(20),
     ]),
     funcionario_id: schema.number(),
